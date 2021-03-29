@@ -160,13 +160,13 @@ function draw() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     check++;
-    var obstacle = createSprite(width,height-115,10,40);
+    var obstacle = createSprite(width,height-112,10,40);
     obstacle.velocityX = -(10);
     //obstacle.debug=true
     //generate random obstacles
     obstacle.addImage(obstacleImg);
     obstacle.scale = 0.1;    
-    obstacle.lifetime = 120;
+    obstacle.lifetime = width/10;
     obstacleGroup.add(obstacle);
     // spawnPlatform();
     if(check>=15){
@@ -215,7 +215,7 @@ function spawnLife(){
    //life.debug=true
   //  life.setCollider("rectangle",0,0,100,100);
   life.scale = 0.1;
-  life.lifetime = 120;
+  life.lifetime = width/10;
 }
 
 function spawnPlatform(){
@@ -227,6 +227,6 @@ function spawnPlatform(){
     //generate random obstacles
     platform.addImage(platformImg);
     platform.scale = 0.1; 
-    platform.lifetime = 120;
+    platform.lifetime = width/10;
     platformGroup.add(platform);
 }
