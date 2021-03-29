@@ -31,9 +31,9 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  ground = createSprite(width/2, height-10, width, 10);
+  ground = createSprite(width/2, height, width, 10);
   ground.addImage(groundImg);
-  ground.scale = 2.5;
+  ground.scale = 2;
   
 
   player = createSprite(200, height-80, 40, 40);
