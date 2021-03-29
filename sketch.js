@@ -72,7 +72,7 @@ function draw() {
       ground.x = ground.width/2;
     }
     // (touches.length > 0 || keyDown("SPACE"))
-    if((touches.length > 0 || keyDown("SPACE"))&& player.y >= 500){
+    if((touches.length > 0 || keyDown("SPACE"))&& player.y >= height-50){
       player.velocityY = -13 ;
       touches = [];
     }
@@ -131,7 +131,7 @@ function draw() {
     stroke("black");
     textSize(90);
     fill("black");
-    text("YOU WON", 400, 300);
+    text("YOU WON", width/2-200, height/2);
     player.velocityY=0;
     player.visible = false;
     obstacleGroup.destroyEach();
@@ -145,7 +145,7 @@ function draw() {
 
   stroke("red");
   textSize(30);
-  text("Life - " + playerLife, 1000, 30);
+  text("Life - " + playerLife, width-300, 30);
  
   
   drawSprites();
@@ -157,7 +157,7 @@ function draw() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     check++;
-    var obstacle = createSprite(width,height-90,10,40);
+    var obstacle = createSprite(width,height-100,10,40);
     obstacle.velocityX = -(10);
     //obstacle.debug=true
     //generate random obstacles
@@ -206,7 +206,7 @@ function reset(){
 
 function spawnLife(){
   bool=true;
-  life = createSprite(width,height-210,40,40);
+  life = createSprite(width,height-220,40,40);
   life.velocityX = -10;
    life.addImage(lifeImg);
    //life.debug=true
@@ -217,7 +217,7 @@ function spawnLife(){
 
 function spawnPlatform(){
   // boolPlatform=true;
-   platform = createSprite(width,height-140,100,100);
+   platform = createSprite(width,height-150,100,100);
     platform.velocityX = -10;
     platform.debug=true
      platform.setCollider("rectangle",0,0,300,300);
