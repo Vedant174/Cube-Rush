@@ -160,7 +160,7 @@ function draw() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     check++;
-    var obstacle = createSprite(width,height-110,10,40);
+    var obstacle = createSprite(width,height-115,10,40);
     obstacle.velocityX = -(10);
     //obstacle.debug=true
     //generate random obstacles
