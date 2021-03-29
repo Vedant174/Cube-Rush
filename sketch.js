@@ -1,3 +1,4 @@
+  
 var playerImg;
 var obstacleImg,obstacle2Img,obstacle3Img,obstacle4Img;
 var platformImg;
@@ -71,10 +72,12 @@ function draw() {
     if(ground.x < 600){
       ground.x = ground.width/2;
     }
+    // console.log(player.y,height)
     // (touches.length > 0 || keyDown("SPACE"))
-    if((touches.length > 0 || keyDown("SPACE"))&& player.y >= height-50){
+    if((touches.length > 0 || keyDown("SPACE"))&& player.y >= height-150){
       player.velocityY = -13 ;
       touches = [];
+
     }
       player.velocityY = player.velocityY + 0.8;
     
@@ -157,7 +160,7 @@ function draw() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     check++;
-    var obstacle = createSprite(width,height-100,10,40);
+    var obstacle = createSprite(width,height-110,10,40);
     obstacle.velocityX = -(10);
     //obstacle.debug=true
     //generate random obstacles
@@ -227,4 +230,3 @@ function spawnPlatform(){
     platform.lifetime = 120;
     platformGroup.add(platform);
 }
-
