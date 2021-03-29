@@ -30,18 +30,18 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(1200,600);
-  ground = createSprite(600, 570, 1300, 50);
+  createCanvas(windowWidth, windowHeight);
+  ground = createSprite(width/2, height-30, width, 50);
   ground.addImage(groundImg);
   
 
-  player = createSprite(200, 519, 40, 40);
+  player = createSprite(200, height-80, 40, 40);
   player.addImage(playerImg);
  // player.debug=true
   player.scale = 0.1;
-  gameOver = createSprite(600, 200, 100, 50);
+  gameOver = createSprite(width/2, height/2-100, width/2, 50);
   gameOver.addImage(gameOverImg);
-  restart = createSprite(600, 400, 100, 50);
+  restart = createSprite(width/2, height/2+100, 100, 50);
   restart.addImage(restartImg);
   restart.scale = 0.5;
   obstacleGroup = createGroup();
@@ -156,7 +156,7 @@ function draw() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     check++;
-    var obstacle = createSprite(1200,510,10,40);
+    var obstacle = createSprite(width,height-90,10,40);
     obstacle.velocityX = -(10);
     //obstacle.debug=true
     //generate random obstacles
@@ -205,7 +205,7 @@ function reset(){
 
 function spawnLife(){
   bool=true;
-  life = createSprite(1200,390,40,40);
+  life = createSprite(width,height-210,40,40);
   life.velocityX = -10;
    life.addImage(lifeImg);
    //life.debug=true
@@ -216,7 +216,7 @@ function spawnLife(){
 
 function spawnPlatform(){
   // boolPlatform=true;
-   platform = createSprite(1200,460,100,100);
+   platform = createSprite(width,height-140,100,100);
     platform.velocityX = -10;
     platform.debug=true
      platform.setCollider("rectangle",0,0,300,300);
